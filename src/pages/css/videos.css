@@ -1,9 +1,0 @@
-@import 'tailwindcss';
-.videos {
-  width: 90%;
-}
-.videos > ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 0.5em;
-}

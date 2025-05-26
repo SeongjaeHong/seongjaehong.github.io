@@ -1,21 +1,15 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import SearchHeader from './components/searchHeader';
-import { Outlet } from 'react-router';
-import { YoutubeApiProvider } from './context/YoutubeApiContext';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
 
-const queryclient = new QueryClient();
-
-function App() {
+export default function App() {
   return (
-    <>
-      <SearchHeader />
-      <YoutubeApiProvider>
-        <QueryClientProvider client={queryclient}>
-          <Outlet />
-        </QueryClientProvider>
-      </YoutubeApiProvider>
-    </>
+    <BrowserRouter basename='/'>
+      <Routes>
+        <Route path='/blog' element={<BlogList />} />
+        <Route path='/blog/:slug' element={<BlogPost />} />
+        <Route path='*' element={<div>404 Not Found</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
