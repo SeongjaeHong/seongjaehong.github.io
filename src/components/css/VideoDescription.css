@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+.description {
+  /* overflow: hidden; */
+  display: flow-root; /* description-inner와의 margin collapse 현상 방지 */
+  margin: 0.75rem 0.75rem 0 0;
+  width: 100%;
+  @apply bg-zinc-600 rounded-lg;
+}
+
+.description a {
+  color: #458deb;
+}
+
+.description-inner {
+  margin: 0.75rem;
+  font-size: 0.7em;
+  white-space: pre-wrap;
+}
+
+.snippet {
+  display: flex;
+  align-items: flex-end;
+}
+
+.snippet:hover {
+  cursor: pointer;
+}
+
+.snippet-text {
+  width: fit-content;
+  @apply line-clamp-3;
+}
+
+.full-text {
+  display: flex;
+  flex-direction: column;
+}
+
+button#expand {
+  flex-shrink: 0;
+}
+
+button#collapse {
+  margin-top: 1em;
+  width: fit-content;
+}
+
+button#collapse:hover {
+  cursor: pointer;
+}
