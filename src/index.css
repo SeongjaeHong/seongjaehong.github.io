@@ -1,4 +1,18 @@
 body {
-  background-color: #252525;
-  color: #dddddd;
+  background-color: #333446;
+  color: #eaefef;
+}
+
+@media screen and (max-width: 700px) {
+  .navbar-top {
+    display: block !important;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  main {
+    margin-top: 3rem;
+  }
 }

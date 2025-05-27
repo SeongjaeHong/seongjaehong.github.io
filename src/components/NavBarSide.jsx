@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CATEGORIES, NAME } from '../../literal';
 import { useLanguageContext } from '../contexts/LanguageContext';
-import './css/NavBar.css';
+import './css/NavBarSide.css';
 import { faSquareGithub } from '@fortawesome/free-brands-svg-icons/faSquareGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { useEffect, useRef, useState } from 'react';
