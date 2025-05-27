@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+.navbar-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}

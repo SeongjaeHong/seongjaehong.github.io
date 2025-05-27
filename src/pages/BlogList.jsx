@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { getPostList } from '../lib/posts';
+import { getPostList } from '../libs/posts';
 
 export default function BlogList() {
   const posts = getPostList();

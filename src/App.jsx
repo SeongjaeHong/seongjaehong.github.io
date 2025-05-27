@@ -1,15 +1,11 @@
-import { BrowserRouter, Route, Routes } from 'react-router';
-import BlogList from './pages/BlogList';
-import BlogPost from './pages/BlogPost';
+import { Outlet } from 'react-router';
+import NavBar from './components/NavBar';
 
 export default function App() {
   return (
-    <BrowserRouter basename='/'>
-      <Routes>
-        <Route path='/blog' element={<BlogList />} />
-        <Route path='/blog/:slug' element={<BlogPost />} />
-        <Route path='*' element={<div>404 Not Found</div>} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <NavBar />
+      <Outlet />
+    </>
   );
 }
