@@ -1,9 +1,43 @@
 @import 'tailwindcss';
 
+.navbar {
+  text-decoration: none;
+  width: 200px;
+  height: 100vh;
+  padding: 0 10px;
+}
+
 .navbar-scrollbar {
   display: none;
 }
 
-a {
-  text-decoration: none;
+.navbar__header {
+  height: 250px;
+
+  @apply flex justify-center items-center;
+  @apply border-b-2 border-zinc-600;
+}
+
+.navbar__header__title__inner {
+  font-weight: bold;
+}
+
+.category {
+  padding: 20px 0;
+  line-height: 2rem;
+  @apply border-b-2 border-zinc-600;
+}
+.category li {
+  padding: 0 10px;
+  @apply hover:bg-zinc-500;
+}
+
+.external-link {
+  padding: 10px 0;
+  font-size: 2rem;
+  @apply flex justify-center gap-5;
+}
+
+.external-link__icon {
+  cursor: pointer;
 }
