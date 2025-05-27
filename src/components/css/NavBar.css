@@ -2,17 +2,18 @@
 
 .navbar {
   text-decoration: none;
-  width: 200px;
+  width: 270px;
   height: 100vh;
   padding: 0 10px;
+  overflow-y: auto;
 }
 
-.navbar-scrollbar {
-  display: none;
+.navbar.show-scrollbar {
+  scrollbar-color: #666 transparent;
 }
 
 .navbar__header {
-  height: 250px;
+  height: 280px;
 
   @apply flex justify-center items-center;
   @apply border-b-2 border-zinc-600;
@@ -23,13 +24,16 @@
 }
 
 .category {
+  font-size: 1.1rem;
   padding: 20px 0;
   line-height: 2rem;
   @apply border-b-2 border-zinc-600;
 }
 .category li {
   padding: 0 10px;
-  @apply hover:bg-zinc-500;
+  cursor: pointer;
+  @apply hover:text-blue-300;
+  /* @apply hover:bg-zinc-500; */
 }
 
 .external-link {

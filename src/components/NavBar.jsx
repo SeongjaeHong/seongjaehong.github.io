@@ -4,14 +4,41 @@ import { useLanguageContext } from '../contexts/LanguageContext';
 import './css/NavBar.css';
 import { faSquareGithub } from '@fortawesome/free-brands-svg-icons/faSquareGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
+import { useEffect, useRef, useState } from 'react';
 
 export default function NavBar() {
   const langManager = useLanguageContext();
+  const navbarRef = useRef(null);
+  const scrollTimerRef = useRef(null);
+  const [scrollVisible, setScrollVisible] = useState(false);
+  useEffect(() => {
+    const navbar = navbarRef.current;
+    if (!navbar) return;
+
+    const wheelHandler = () => {
+      setScrollVisible(true);
+      if (scrollTimerRef.current) {
+        clearTimeout(scrollTimerRef.current);
+      }
+      scrollTimerRef.current = setTimeout(() => {
+        setScrollVisible(false);
+      }, 1000);
+    };
+    navbar.addEventListener('wheel', wheelHandler);
+
+    return () => {
+      navbar.removeEventListener('wheel', wheelHandler);
+      if (scrollTimerRef.current) {
+        clearTimeout(scrollTimerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <aside className='navbar'>
-      <div className='navbar__scrollbar' hidden={true}>
-        <div className='navbar__scrollbar__inner' />
-      </div>
+    <aside
+      className={`navbar ${scrollVisible ? 'show-scrollbar' : ''}`}
+      ref={navbarRef}
+    >
       <section className='navbar__header'>
         <a href='/' className='navbar__header__title'>
           <p className='navbar__header__title__inner'>{NAME}</p>
