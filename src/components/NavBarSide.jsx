@@ -6,7 +6,7 @@ import { faSquareGithub } from '@fortawesome/free-brands-svg-icons/faSquareGithu
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { useEffect, useRef, useState } from 'react';
 
-export default function NavBar() {
+export default function NavBarSide() {
   const langManager = useLanguageContext();
   const navbarRef = useRef(null);
   const scrollTimerRef = useRef(null);
