@@ -5,13 +5,17 @@ import App from './App.jsx';
 import BlogList from './pages/BlogList.jsx';
 import LanguageContext from './contexts/LanguageContext.jsx';
 import { BLOG_TITLE } from '../literal.js';
+import BlogPost from './pages/BlogPost.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     Component: App,
     errorElement: <p>Error</p>,
-    children: [{ index: true, Component: BlogList }],
+    children: [
+      { index: true, Component: BlogList },
+      { path: '/:postId', Component: BlogPost },
+    ],
   },
 ]);
 
