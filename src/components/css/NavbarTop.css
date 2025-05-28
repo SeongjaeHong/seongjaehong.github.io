@@ -6,12 +6,11 @@
   height: 50px;
   background-color: rgba(184, 207, 206, 0.7);
   backdrop-filter: blur(7px);
-  @apply flex justify-center items-center;
+  @apply flex justify-between items-center;
 }
 
-.gnb-left {
-  position: absolute;
-  left: 0;
+.gnb-right {
+  width: 3rem;
 }
 
 .fc-button {

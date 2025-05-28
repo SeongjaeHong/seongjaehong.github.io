@@ -20,6 +20,8 @@ export default function NavBarTop() {
         <div className='gnb-center'>
           <a href='/'>{NAME}</a>
         </div>
+        {/* Dummy div to align gnb-center to the center */}
+        <div className='gnb-right'></div>
       </nav>
       <div className='sidebar-contents'>
         <div className='sub-navigation'>
