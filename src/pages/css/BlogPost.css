@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+.contents-cover {
+  height: calc(10vw + 180px);
+
+  @apply flex justify-center items-center;
+  @apply bg-red-300;
+}
+
+.headline {
+  text-align: center;
+  width: 640px;
+  font-size: 33px;
+  margin: auto;
+}
+
+.contents {
+  display: block;
+  padding: 3rem 1rem 0;
+}
+
+@media (max-width: 760px) {
+  .headline {
+    width: 520px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 560px) {
+  .headline {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 340px) {
+  .headline {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 320px) {
+  .headline {
+    width: 288px;
+  }
+}

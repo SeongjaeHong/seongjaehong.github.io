@@ -9,6 +9,9 @@
   position: sticky;
   top: 0;
   height: 50px;
+}
+
+.navbar-top.mobile.scroll {
   background-color: rgba(184, 207, 206, 0.7);
   backdrop-filter: blur(7px);
 }
