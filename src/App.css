@@ -1,10 +1,10 @@
 @import 'tailwindcss';
 
-article {
+main {
   width: 100%;
   padding-left: 280px;
 }
 
-article.mobile {
+main.mobile {
   padding-left: 0;
 }

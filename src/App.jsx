@@ -28,9 +28,9 @@ export default function App() {
         openSidebar={openSidebar}
         openSidebarHandler={openSidebarHandler}
       />
-      <article className={mobile ? ' mobile' : ''}>
+      <main className={mobile ? ' mobile' : ''}>
         <Outlet />
-      </article>
+      </main>
     </>
   );
 }
