@@ -1,12 +1,16 @@
 @import 'tailwindcss';
 
 .navbar-top {
-  position: fixed;
-  width: 100%;
+  display: none;
+}
+
+.navbar-top.mobile {
+  @apply flex justify-between items-center;
+  position: sticky;
+  top: 0;
   height: 50px;
   background-color: rgba(184, 207, 206, 0.7);
   backdrop-filter: blur(7px);
-  @apply flex justify-between items-center;
 }
 
 .gnb-right {
@@ -16,11 +20,11 @@
 .fc-button {
   width: 3rem;
   height: 3rem;
-  transition: transform 0.2s;
+  transition: transform 0.3s;
 }
 
 .fc-button.hide {
-  transform: rotate(90deg) scaleY(0);
+  transform: rotate(90deg) scaleX(0);
 }
 
 .fc-button.show {
@@ -29,15 +33,4 @@
 
 .fc-button:active {
   color: rgb(50, 50, 250);
-}
-
-.sub-navigation {
-  z-index: 1000;
-  padding-top: 50px;
-}
-
-#close-sidebar {
-  font-size: 1.3rem;
-  position: absolute;
-  top: 1px;
 }

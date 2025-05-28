@@ -6,6 +6,7 @@ import BlogList from './pages/BlogList.jsx';
 import LanguageContext from './contexts/LanguageContext.jsx';
 import { BLOG_TITLE } from '../literal.js';
 import BlogPost from './pages/BlogPost.jsx';
+import ScreenContextProvider from './contexts/ScreenContextProvider';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = createRoot(container);
     root.render(
       <LanguageContext>
-        <RouterProvider router={router} />
+        <ScreenContextProvider>
+          <RouterProvider router={router} />
+        </ScreenContextProvider>
       </LanguageContext>
     );
   }

@@ -2,4 +2,9 @@
 
 main {
   width: 100%;
+  padding-left: 280px;
+}
+
+main.mobile {
+  padding-left: 0;
 }

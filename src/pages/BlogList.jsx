@@ -1,10 +1,13 @@
 import { Link } from 'react-router';
 import { posts } from '../libs/posts';
 import './css/BlogList.css';
+import { useScreenContext } from '../contexts/ScreenContextProvider';
 
 export default function BlogList() {
+  const mobile = useScreenContext();
+
   return (
-    <main className='main'>
+    <main className={'main' + (mobile ? ' mobile' : '')}>
       <h1>-- 블로그 글 목록 --</h1>
       <ul>
         {Object.entries(posts).map(([postId, data]) => (
