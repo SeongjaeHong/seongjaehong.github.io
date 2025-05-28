@@ -3,11 +3,17 @@ body {
   color: #eaefef;
 }
 
-@media screen and (max-width: 700px) {
-  .navbar-top {
-    display: block !important;
-  }
+button {
+  cursor: pointer;
+}
 
+@media screen and (min-width: 700px) {
+  .navbar-top {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .navbar {
     display: none;
   }
