@@ -3,6 +3,7 @@ import NavBarSide from './components/NavBarSide';
 import NavBarTop from './components/NavbarTop';
 import { useEffect, useState } from 'react';
 import { useScreenContext } from './contexts/ScreenContextProvider';
+import './App.css';
 
 export default function App() {
   const mobile = useScreenContext();
@@ -27,7 +28,9 @@ export default function App() {
         openSidebar={openSidebar}
         openSidebarHandler={openSidebarHandler}
       />
-      <Outlet />
+      <main className={'main' + (mobile ? ' mobile' : '')}>
+        <Outlet />
+      </main>
     </>
   );
 }
