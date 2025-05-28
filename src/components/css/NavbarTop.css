@@ -1,10 +1,44 @@
 @import 'tailwindcss';
 
 .navbar-top {
-  display: none;
   position: fixed;
   width: 100%;
-  height: 3rem;
+  height: 50px;
   background-color: rgba(184, 207, 206, 0.7);
   backdrop-filter: blur(7px);
+  @apply flex justify-center items-center;
+}
+
+.gnb-left {
+  position: absolute;
+  left: 0;
+}
+
+.fc-button {
+  width: 3rem;
+  height: 3rem;
+  transition: transform 0.2s;
+}
+
+.fc-button.hide {
+  transform: rotate(90deg) scaleY(0);
+}
+
+.fc-button.show {
+  transform: rotate(180deg);
+}
+
+.fc-button:active {
+  color: rgb(50, 50, 250);
+}
+
+.sub-navigation {
+  z-index: 1000;
+  padding-top: 50px;
+}
+
+#close-sidebar {
+  font-size: 1.3rem;
+  position: absolute;
+  top: 1px;
 }
