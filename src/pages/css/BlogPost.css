@@ -3,7 +3,7 @@
   height: calc(10vw + 180px);
 
   @apply flex justify-center items-center;
-  @apply bg-red-300;
+  @apply bg-violet-200;
 }
 
 .headline {
@@ -11,11 +11,6 @@
   width: 640px;
   font-size: 33px;
   margin: auto;
-}
-
-.contents {
-  display: block;
-  padding: 3rem 1rem 0;
 }
 
 @media (max-width: 760px) {

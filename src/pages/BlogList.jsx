@@ -5,17 +5,34 @@ import './css/BlogList.css';
 export default function BlogList() {
   return (
     <>
-      <h1>-- 블로그 글 목록 --</h1>
-      <ul>
-        {Object.entries(posts).map(([postId, data]) => (
-          <li key={postId}>
-            <Link to={`/${postId}`}>{data.title}</Link>
-          </li>
-        ))}
-        {[...Array(50)].map((_, index) => (
-          <li key={'mock' + index}>mock item: {index + 1}</li>
-        ))}
-      </ul>
+      <section className='cover'>
+        <h1 className='cover__title'>최신 글</h1>
+        <div className='cover__items'>
+          <ul className='article-list'>
+            {Object.entries(posts).map(([postId, data]) => (
+              <li className='article-item' key={postId}>
+                <Link
+                  to={`/${postId}`}
+                  state={{ thumbnailPath: data.thumbnail }}
+                >
+                  <div className='post-card'>
+                    <div>
+                      {data.thumbnail && (
+                        <img
+                          className='post-card__thumbnail'
+                          src={data.thumbnail}
+                          alt='Post thumbnail'
+                        />
+                      )}
+                    </div>
+                    <div className='post-card__title'>{data.title}</div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   );
 }

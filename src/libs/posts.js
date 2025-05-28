@@ -6,16 +6,23 @@ const searchedPosts = import.meta.glob('../../posts/**/*.md', {
 });
 
 let title;
+let thumbnail;
 export const posts = new Object();
 Object.entries(searchedPosts).map(([path, contents], index) => {
   const fileName = path.split('/').pop().replace('.md', '');
   const match = contents.match(/^# (.+)\r?\n([\s\S]+)/m);
+  const thumbnailMatch = contents.match(
+    /!\[[^\]]*\]\(([^)]+\.(?:png|jpg|jpeg))\)/i
+  );
 
+  if (thumbnailMatch) {
+    thumbnail = thumbnailMatch[1];
+  }
   if (match) {
     title = match[1];
     contents = match[2];
   } else {
     title = fileName;
   }
-  Object.assign(posts, { [index]: { title, contents } });
+  Object.assign(posts, { [index]: { title, contents, thumbnail } });
 });

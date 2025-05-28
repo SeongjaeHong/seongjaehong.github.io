@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+.cover {
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+.contents {
+  display: block;
+  padding: 3rem 1rem 0;
+}
+
+.post-card__title {
+  background-color: rgba(20, 20, 20, 0.7);
+}
+
+.cover__title {
+  max-width: 640px;
+  margin: 94px auto 62px;
+  height: calc(1em * 1.2);
+  font-size: 33px;
+  line-height: 1.2;
+  text-align: center;
+  cursor: default;
+}
+
+.article-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.article-item {
+  padding: 0 10px 10px 0;
+}
+
+.post-card {
+  position: relative;
+}
+
+.post-card__thumbnail {
+  aspect-ratio: 1 / 1;
+}
+
+.post-card__title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @apply line-clamp-3;
+}
+
+@media (max-width: 760px) {
+  .cover__title {
+    margin-top: 74px;
+    margin-bottom: 52px;
+    font-size: 26px;
+    max-width: 520px;
+  }
+
+  .article-item {
+    padding: 0 1px 1px 0;
+  }
+}
