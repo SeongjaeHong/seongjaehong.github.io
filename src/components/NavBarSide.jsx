@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CATEGORIES, NAME } from '../../literal';
+import { NAME } from '../../literal';
 import { useLanguageContext } from '../contexts/LanguageContext';
 import { faSquareGithub } from '@fortawesome/free-brands-svg-icons/faSquareGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useScreenContext } from '../contexts/ScreenContextProvider';
 import './css/NavBarSide.css';
+import { categories } from '../libs/posts';
 
 export default function NavBarSide({ openSidebar, openSidebarHandler }) {
   const mobile = useScreenContext();
@@ -76,8 +77,11 @@ export default function NavBarSide({ openSidebar, openSidebarHandler }) {
         <div className='side-bar'>
           <section className='category'>
             <ul>
-              {CATEGORIES.map((category, index) => (
-                <li key={`category_${index}`}>{category[langManager.lang]}</li>
+              {Object.entries(categories).map(([tag, data], index) => (
+                <li key={`category__${index}`}>
+                  <span id='category__title'>{data[langManager.lang]}</span>
+                  <span id='count'> ({data.count})</span>
+                </li>
               ))}
             </ul>
           </section>
