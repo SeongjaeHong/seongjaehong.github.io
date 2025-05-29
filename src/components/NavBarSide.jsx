@@ -1,14 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NAME } from '../../literal';
-import { useLanguageContext } from '../contexts/LanguageContext';
 import { faSquareGithub } from '@fortawesome/free-brands-svg-icons/faSquareGithub';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { useEffect, useRef, useState } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { useScreenContext } from '../contexts/ScreenContextProvider';
-import './css/NavBarSide.css';
-import { categories } from '../libs/posts';
 import { Link } from 'react-router';
+import { useScreenContext } from '../contexts/ScreenContextProvider';
+import { useLanguageContext } from '../contexts/LanguageContext';
+import { categories } from '../libs/posts';
+import { NAME } from '../../literal';
+import './css/NavBarSide.css';
+import './css/NavBarSide-Mobile.css';
 
 export default function NavBarSide({ openSidebar, openSidebarHandler }) {
   const mobile = useScreenContext();
