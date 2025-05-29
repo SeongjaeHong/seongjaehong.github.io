@@ -1,16 +1,17 @@
-import './css/NavBarTop.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NAME } from '../../literal';
 import { useScreenContext } from '../contexts/ScreenContextProvider';
 import { useEffect, useState } from 'react';
+import './css/NavBarTop.css';
 
 export default function NavBarTop({ openSidebar, openSidebarHandler }) {
   const mobile = useScreenContext();
   const [scroll, setScroll] = useState(false);
   const scrollHandler = () => {
-    const targetY = window.innerHeight * 0.1 + 180;
+    const targetY = document.body.clientHeight * 0.1 + 180;
     const curY = window.scrollY + 50;
+
     if (curY >= targetY) {
       setScroll(true);
     } else {

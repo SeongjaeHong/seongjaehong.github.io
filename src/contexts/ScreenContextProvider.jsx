@@ -4,7 +4,7 @@ const ScreenContext = createContext();
 export default function ScreenContextProvider({ children }) {
   const [mobile, setMobile] = useState(false);
   const windowResizeHandler = () => {
-    if (window.innerWidth <= 700) {
+    if (document.body.clientWidth <= 700) {
       setMobile(true);
     } else {
       setMobile(false);
