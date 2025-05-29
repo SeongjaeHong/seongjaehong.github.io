@@ -12,10 +12,6 @@ export default function BlogPost() {
   const location = useLocation();
   const thumbnailPath = location.state?.thumbnailPath;
 
-  if (!content) {
-    return <div className='mx-auto p-4'>해당 글이 없습니다.</div>;
-  }
-
   return (
     <>
       <header
