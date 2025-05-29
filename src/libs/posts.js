@@ -41,7 +41,6 @@ function compareFn(path1, path2) {
 }
 
 function setPosts() {
-  console.log('hi: ', Date.now());
   let sortedPath = Object.keys(searchedPosts);
   sortedPath.sort(compareFn);
 
