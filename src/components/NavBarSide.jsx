@@ -8,6 +8,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useScreenContext } from '../contexts/ScreenContextProvider';
 import './css/NavBarSide.css';
 import { categories } from '../libs/posts';
+import { Link } from 'react-router';
 
 export default function NavBarSide({ openSidebar, openSidebarHandler }) {
   const mobile = useScreenContext();
@@ -79,8 +80,10 @@ export default function NavBarSide({ openSidebar, openSidebarHandler }) {
             <ul>
               {Object.entries(categories).map(([tag, data], index) => (
                 <li key={`category__${index}`}>
-                  <span id='category__title'>{data[langManager.lang]}</span>
-                  <span id='count'> ({data.count})</span>
+                  <Link to={`/category?tag=${tag}`}>
+                    <span id='category__title'>{data[langManager.lang]}</span>
+                    <span id='count'> ({data.count})</span>
+                  </Link>
                 </li>
               ))}
             </ul>

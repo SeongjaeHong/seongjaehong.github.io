@@ -5,7 +5,10 @@
   @apply flex justify-center items-center;
   @apply bg-violet-200;
 }
-
+.contents {
+  display: block;
+  padding: 3rem 1rem 0;
+}
 .headline {
   text-align: center;
   width: 640px;
