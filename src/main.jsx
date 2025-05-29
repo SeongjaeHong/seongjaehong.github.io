@@ -7,6 +7,8 @@ import LanguageContext from './contexts/LanguageContext.jsx';
 import { BLOG_TITLE } from '../literal.js';
 import BlogPost from './pages/BlogPost.jsx';
 import ScreenContextProvider from './contexts/ScreenContextProvider';
+import CategoryList from './pages/CategoryList.jsx';
+import { posts } from './libs/posts';
 
 const router = createBrowserRouter([
   {
@@ -14,8 +16,9 @@ const router = createBrowserRouter([
     Component: App,
     errorElement: <p>Error</p>,
     children: [
-      { index: true, Component: BlogList },
+      { index: true, Component: () => BlogList(posts) },
       { path: '/:postId', Component: BlogPost },
+      { path: '/category', Component: CategoryList },
     ],
   },
 ]);

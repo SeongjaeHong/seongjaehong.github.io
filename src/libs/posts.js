@@ -86,7 +86,7 @@ function setPosts() {
     }
 
     date = fileName.split('-');
-    date = [date[0], date[1], date[2]].join('');
+    date = [date[0], date[1], date[2]].join('-');
 
     posts[index] = { title, tag, contents, thumbnail, date };
   }
