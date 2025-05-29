@@ -1,14 +1,28 @@
 @import 'tailwindcss';
 
 .navbar-top {
-  display: none;
+  /* display: none; */
+  height: 50px;
+  visibility: hidden;
 }
 
-.navbar-top.mobile {
+/* .navbar-top.mobile {
+  visibility: visible;
   @apply flex justify-between items-center;
-  position: sticky;
-  top: 0;
+  position: sticky !important;
   height: 50px;
+  outline: 2px solid red;
+  z-index: 1000;
+} */
+
+.navbar-top.mobile {
+  visibility: visible;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-top.mobile.scroll {
