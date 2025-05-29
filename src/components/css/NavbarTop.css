@@ -1,28 +1,14 @@
 @import 'tailwindcss';
 
 .navbar-top {
-  /* display: none; */
+  display: none;
   height: 50px;
-  visibility: hidden;
+  top: 0;
 }
 
-/* .navbar-top.mobile {
-  visibility: visible;
-  @apply flex justify-between items-center;
-  position: sticky !important;
-  height: 50px;
-  outline: 2px solid red;
-  z-index: 1000;
-} */
-
 .navbar-top.mobile {
-  visibility: visible;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky !important;
-  top: 0;
-  z-index: 1000;
+  @apply flex justify-between items-center;
+  position: sticky;
 }
 
 .navbar-top.mobile.scroll {
@@ -37,7 +23,7 @@
 .fc-button {
   width: 3rem;
   height: 3rem;
-  transition: transform 0.3s;
+  transition: transform 0.5s;
 }
 
 .fc-button.hide {

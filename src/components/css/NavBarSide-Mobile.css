@@ -7,15 +7,10 @@
 .navbar-side.mobile .sub-navigation {
   opacity: 0;
   transition: opacity 0.5s;
-  overflow-y: auto;
-}
-
-.navbar-side.mobile.show .sub-navigation.fixed {
-  opacity: 1;
-  position: fixed;
+  top: 0;
   width: 100%;
   height: 100%;
-  top: 0;
+  overflow-y: auto;
   background: #292929;
   background: linear-gradient(
     90deg,
@@ -25,9 +20,14 @@
   );
 }
 
+.navbar-side.mobile.show .sub-navigation.fixed {
+  opacity: 1;
+  position: fixed;
+}
+
 .navbar-side.mobile .side-bar {
   transform: translateY(1rem);
-  transition: transform 0.2s;
+  transition: transform 0.5s;
   padding-top: 3rem;
   width: 280px;
   @apply flex flex-col;
